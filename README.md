@@ -1,4 +1,4 @@
-# 💎 Diamond Studio - Canvas Processor
+# 💎 Diamond Studio
 
 **Diamond Studio** es una herramienta web profesional diseñada para entusiastas del *Diamond Painting*. Permite transformar cualquier imagen en un esquema pixelado preciso, calculando automáticamente el inventario de diamantes necesario y generando guías de exportación en PDF a **escala real**.
 
@@ -22,6 +22,12 @@
 * **Bootstrap 5:** Estructura y diseño responsivo.
 * **jsPDF:** Generación de documentos PDF técnicos.
 * **QRCode.js:** Creación de códigos QR dinámicos.
+
+## 🗺️ Roadmap (Próximas Actualizaciones)
+
+Actualmente estoy trabajando para mejorar la herramienta. Estas son las funciones que llegarán pronto:
+
+- [ ] Interfaz No Bloqueante: Sustituir los alerts nativos por un sistema de notificaciones Toast para una navegación más fluida y moderna.
 
 ## 📄 Licencia
 
