@@ -1,5 +1,6 @@
 const CONFIG_PROYECTO = {
-    urlWeb: "https://www.twitch.tv/bystaxx",
-    urlCreador: "https://www.twitch.tv/bystaxx",
+    urlWeb: "https://studio-diamond.vercel.app/",
+    urlCreador: "https://github.com/AngelLuisIamandi/",
     nombreBaseArchivos: "proyecto-diamond"
+
 };
