@@ -1,0 +1,50 @@
+.color-circle {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.table input[type="number"] {
+    min-width: 60px;
+    text-align: center;
+}
+
+.btn-danger.btn-sm {
+    border-radius: 8px;
+    font-weight: bold;
+    height: 38px;
+    width: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    h2 {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    .form-control-sm {
+        height: 45px;
+        font-size: 16px !important;
+    }
+
+    .btn-sm {
+        padding: 10px 15px;
+    }
+
+    .btn-outline-secondary {
+        font-size: 0.85rem;
+        padding: 12px 5px;
+    }
+
+    .navbar-brand { font-size: 1rem; }
+    .btn-sm { padding: 10px; }
+}

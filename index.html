@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador - Diamond Studio</title>
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Diamond Studio</a>
+            <div class="navbar-nav ms-auto flex-row gap-3">
+                <a class="nav-link active" href="index.html">Lienzo</a>
+                <a class="nav-link" href="inventario.html">Stock</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container pb-5">
+        <div class="card shadow-sm mb-4">
+            <div class="card-body">
+                <div class="mb-3">
+                    <label class="form-label fw-bold">1. Sube tu foto</label>
+                    <input type="file" id="input-image" class="form-control" accept="image/*">
+                </div>
+
+                <div class="row g-2 mb-3">
+                    <div class="col-8">
+                        <label class="form-label small fw-bold">Ancho</label>
+                        <input type="number" id="input-ancho" class="form-control" placeholder="Valor">
+                    </div>
+                    <div class="col-4">
+                        <label class="form-label small fw-bold">Unidad</label>
+                        <select id="unit-ancho" class="form-select">
+                            <option value="cm">cm</option>
+                            <option value="uds">uds</option>
+                        </select>
+                    </div>
+                    <div class="col-8">
+                        <label class="form-label small fw-bold">Alto</label>
+                        <input type="number" id="input-alto" class="form-control" placeholder="Valor">
+                    </div>
+                    <div class="col-4">
+                        <label class="form-label small fw-bold">Unidad</label>
+                        <select id="unit-alto" class="form-select">
+                            <option value="cm">cm</option>
+                            <option value="uds">uds</option>
+                        </select>
+                    </div>
+                    <div class="col-12 mt-2">
+                        <label class="form-label small fw-bold">Tamaño Diamante (mm)</label>
+                        <input type="number" id="input-mm-diamante" class="form-control" value="3" step="0.1">
+                    </div>
+                </div>
+
+                <div class="form-check form-switch mb-3">
+                    <input class="form-check-input" type="checkbox" id="check-simbolos" checked>
+                    <label class="form-check-label fw-bold" for="check-simbolos">Mostrar símbolos en el lienzo</label>
+                </div>
+
+                <div class="bg-dark text-white p-2 rounded text-center mb-3">
+                    <span class="small fw-bold">Lienzo final: </span>
+                    <span id="res-calculada" class="badge bg-primary">0 x 0</span>
+                    <span class="small"> diamantes</span>
+                </div>
+
+                <button id="btn-generar" class="btn btn-success w-100 fw-bold py-2" disabled>✨ GENERAR LIENZO</button>
+            </div>
+        </div>
+
+        <div id="resultado-container" style="display: none;">
+            <h5 class="mb-3">Previsualización:</h5>
+            <div id="canvas-resultado" class="card shadow-sm p-2 text-center bg-white mb-4 overflow-auto">
+                <canvas id="canvas-pixelado" class="img-fluid border"></canvas>
+            </div>
+
+            <h5>Leyenda de materiales:</h5>
+            <div id="resumen-material" class="list-group shadow-sm mb-4"></div>
+
+            <div id="acciones-exportar" class="card shadow-sm border-primary">
+                <div class="card-header bg-primary text-white fw-bold">Panel de Exportación</div>
+                <div class="card-body">
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <button id="btn-descargar-lienzo" class="btn btn-outline-dark w-100">🖼️ Lienzo
+                                (PNG)</button>
+                        </div>
+                        <div class="col-md-4">
+                            <button id="btn-descargar-guia" class="btn btn-outline-dark w-100">📋 Guía + QR
+                                (PNG)</button>
+                        </div>
+                        <div class="col-md-4">
+                            <button id="btn-descargar-pdf" class="btn btn-danger w-100">📄 PDF Escala Real</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <canvas id="canvas-buffer" style="display:none;"></canvas>
+    <div id="qrcode-buffer" style="display:none;"></div>
+
+    <script src="js/config.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/procesador.js"></script>
+</body>
+</html>
